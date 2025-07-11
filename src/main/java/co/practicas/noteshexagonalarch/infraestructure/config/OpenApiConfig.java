@@ -12,8 +12,8 @@ public class OpenApiConfig {
     public OpenAPI customOpenAPI() {
         return new OpenAPI()
                 .info(new Info()
-                        .title("Ensolvers Notes Hexagonal Architecture API")
-                        .version("0.1")
+                        .title("Notes App Hexagonal Architecture API")
+                        .version("0.2")
                         .description("API to create, modify, delete, archive and filter notes."));
     }
 }

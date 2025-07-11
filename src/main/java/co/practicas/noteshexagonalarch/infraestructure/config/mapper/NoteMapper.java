@@ -68,7 +68,7 @@ public class NoteMapper {
                 .categories(
                         entity.getCategories() != null
                                 ? entity.getCategories().stream()
-                                .map(categoryMapper::toDomain)
+                                .map(categoryMapper::entityToDomain)
                                 .collect(Collectors.toSet())
                                 : Set.of()
                 )

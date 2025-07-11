@@ -8,6 +8,7 @@ import co.practicas.noteshexagonalarch.dto.NoteDTO;
 import co.practicas.noteshexagonalarch.infraestructure.config.mapper.NoteMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
@@ -17,6 +18,7 @@ public class CreateNoteService implements CreateNoteUseCase {
     private final NoteMapper noteMapper;
 
     @Override
+    @Transactional
     public NoteDTO create(CreateNoteRequest request) {
         Note note = noteMapper.toDomain(request);
         Note saved = noteRepositoryPort.createNote(note, request.categories());
